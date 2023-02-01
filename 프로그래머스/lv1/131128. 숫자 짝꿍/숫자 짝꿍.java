@@ -42,7 +42,7 @@ class Solution {
             }
             // StringBuilder 길이와 0의 개수가 같다면
             if(sb.length() == zeroCnt){
-                // StringBuilder 초기화(1 ~ 끝까지)
+                // StringBuilder 초기화 후 0 추가
                 sb.delete(0, sb.length());
                 sb.append(0);
             }
