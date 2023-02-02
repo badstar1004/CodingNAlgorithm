@@ -10,11 +10,13 @@ class Solution {
         
         // for문
         for(int i = 0; i < s.length(); i++){
-            for (int j = 0; j < alphabet.length(); j++) {
+            int j = 0;
+            while (j < alphabet.length()){
                 if(s.charAt(i) == alphabet.charAt(j)){
                     sb.append(alphabet.charAt((j + index) % alphabet.length()));
                     break;
                 }
+                j++;
             }
         }
         
