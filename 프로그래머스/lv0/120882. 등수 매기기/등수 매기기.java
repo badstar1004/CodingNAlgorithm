@@ -21,7 +21,8 @@ class Solution {
 
         // 정렬
         Arrays.sort(avg);
-        // 거꾸로 넣음
+        
+        // for문 돌면서 중복점수 x 대신 등수는 같은 등수 (HashMap function 생각하기!)
         for (int i = 0; i < n; i++) {
             map.put(avg[i], n - i);
         }
