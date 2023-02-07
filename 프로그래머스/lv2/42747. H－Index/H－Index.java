@@ -4,14 +4,16 @@ class Solution {
     public int solution(int[] citations) {
         int answer = 0;
         
-        // 정렬
+        // 짝수 길이면 0
+        if(citations.length % 2 == 0){
+            return answer;
+        }
+        
+        // 오름차순 정렬
         Arrays.sort(citations);
         
-        for(int i = 0; i < citations.length; i++){
-            if(citations[i] >= citations.length - i){
-                answer = citations.length - i;
-                break;
-            }
+        while(answer + 1 <= citations[answer]){
+            answer++;
         }
         
         return answer;
