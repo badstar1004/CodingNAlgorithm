@@ -8,7 +8,7 @@ class Solution {
         int[] answer = {};
         
         /* HashMap으로 구현
-            중복된 횟수가 많은 것부터 answer배열에 저장
+            중복된 횟수가 큰 것부터 answer배열에 저장
         */
         
         // HashMap
@@ -22,7 +22,7 @@ class Solution {
             hashMap.put(c, hashMap.getOrDefault(c, 0) + 1);
         }
         
-        // 정렬을 위해 hashMap.entrySet() 을 리스트(Map.Entry<>)로 변환
+        // 정렬을 위해 hashMap.entrySet()을 List(Map.Entry<>)로 변환
         List<Map.Entry<String, Integer>> list = new ArrayList<>(hashMap.entrySet());
 
         // 정렬 (값 기준 내림차순)
