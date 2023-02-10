@@ -25,7 +25,7 @@ class Solution {
         int idx = 0;    // answer 배열 인덱스
         // for문
         for(long i = left; i <= right; i++){
-            answer[idx++] = (long)(Math.max((long)(i / n), (long)(i % n)) + 1);
+            answer[idx++] = Math.max((i / n), (i % n)) + 1;
         }
         
         return answer;
