@@ -19,7 +19,7 @@ class Solution {
             3. 0,0 부터 구할 필요는 없으니 for 문으로 left ~ right 까지 구하면 됨
         */
         
-        int len = (int)((right - left) + 1);
+        int len = (int)(right - left) + 1;
         answer = new long[len];
         
         int idx = 0;    // answer 배열 인덱스
