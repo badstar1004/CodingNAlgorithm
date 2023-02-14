@@ -11,7 +11,7 @@ class Solution {
                 할인행사하는 물품의 개수 HashMap discountProd 에 추가
                 iWant 와 discountProd value 값 비교
                 전체 물품의 value 가 같거나 iWant 의 value 보다 크다면
-                    answer = i + 1 값 리턴
+                    answer++
         */
         
         // HashMap iWant
