@@ -69,7 +69,7 @@ class Solution {
         // DP return
         // return target > 1000 ? 0 : dp[n - 1][target + 1000];
         
-        // dfs return
+        // DFS return
         // return dfs(numbers, target, 0, 0);
     }
 }
