@@ -46,7 +46,7 @@ class Solution {
         int ways = 0;
         Queue<Integer> queue = new LinkedList<>();
         
-        queue.add(0); // initialize with zero sum
+        queue.add(0);
         
         for (int i = 0; i < numbers.length; i++) {
             int size = queue.size();
