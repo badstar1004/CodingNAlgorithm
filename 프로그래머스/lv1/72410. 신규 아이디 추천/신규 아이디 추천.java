@@ -1,5 +1,7 @@
 class Solution {
     public String solution(String new_id) {
+        
+        // 정규식
         String answer = new_id.toLowerCase()    // 1단계
             .replaceAll("[^-_.a-z0-9]", "")     // 2단계
             .replaceAll("[.]{2,}", ".")         // 3단계
@@ -14,7 +16,7 @@ class Solution {
             answer = answer.replaceAll("[.]$", "");
         }
         
-        while(answer.length() <= 2) {
+        while(answer.length() <= 2) {           // 7단계
             answer += answer.charAt(answer.length() - 1);
         }
         
