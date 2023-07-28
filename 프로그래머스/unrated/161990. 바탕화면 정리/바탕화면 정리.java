@@ -11,24 +11,24 @@ class Solution {
         int cor = wallpaper[0].length();
         
         // 직사각형 초기화
-        int minX = 0;       // 위 ()
-        int minY = 0;       // 왼쪽
-        int maxX = cor;     // 오른쪽
-        int maxY = row;     // 아래
+        int top = Integer.MAX_VALUE;        // 위 (최소)
+        int left = Integer.MAX_VALUE;       // 왼쪽 (최소)
+        int right = Integer.MIN_VALUE;      // 오른쪽 (최대)
+        int bottom = Integer.MIN_VALUE;     // 아래 (최대)
         
         // 2중 for문
         for(int i = 0; i < row; i++) {
             for(int j = 0; j < cor; j++) {
                 if(wallpaper[i].charAt(j) == '#') {
-                    minX = Math.max(minX, j);
-                    minY = Math.max(minY, i);
-                    maxX = Math.min(maxX, j);
-                    maxY = Math.min(maxY, i);
+                    top = Math.min(top, i);
+                    left = Math.min(left, j);
+                    right = Math.max(right, i);
+                    bottom = Math.max(bottom, j);
                 }
             }
         }
         
-        return new int[]{maxY, maxX, minY + 1, minX + 1};
+        return new int[]{top, left, right + 1, bottom + 1};
         
     }
 }
