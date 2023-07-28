@@ -11,10 +11,10 @@ class Solution {
         int cor = wallpaper[0].length();
         
         // 직사각형 초기화
-        int minX = 0;     
-        int minY = 0; 
-        int maxX = cor;   
-        int maxY = row; 
+        int minX = 0;       // 위 ()
+        int minY = 0;       // 왼쪽
+        int maxX = cor;     // 오른쪽
+        int maxY = row;     // 아래
         
         // 2중 for문
         for(int i = 0; i < row; i++) {
