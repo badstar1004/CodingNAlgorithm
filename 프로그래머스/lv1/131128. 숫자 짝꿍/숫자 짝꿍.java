@@ -30,24 +30,17 @@ class Solution {
                 }
             }
         }
-
-        if(sb.length() > 0){
-            // 값이 0만 있을 경우
-            int zeroCnt = 0;
-            for (int i = 0; i < sb.length(); i++) {
-                // 0 개수
-                if(sb.charAt(i) == '0'){
-                    zeroCnt++;
-                }
-            }
-            // StringBuilder 길이와 0의 개수가 같다면
-            if(sb.length() == zeroCnt){
-                // StringBuilder 초기화 후 0 추가
-                sb.delete(0, sb.length());
-                sb.append(0);
-            }
+        
+        
+        if(sb.length() == 0) {
+            return "-1";
+            
+        } else if (sb.charAt(0) == '0') {
+            return "0";
+            
+        } else {
+            return sb.toString();
         }
         
-        return sb.length() == 0 ? "-1" : sb.toString();
     }
 }
