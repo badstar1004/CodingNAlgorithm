@@ -32,15 +32,15 @@ class Solution {
         
         // 유형 계산
         for(int i = 0; i < survey.length; i++) {
-            char first = survey[i].charAt(0);
-            char second = survey[i].charAt(1);
+            char one = survey[i].charAt(0);
+            char two = survey[i].charAt(1);
             
             int score = choiceMap.get(choices[i]);
             if (choices[i] <= 4) {
-                kindMap.put(first, kindMap.get(first) + score);
+                kindMap.put(one, kindMap.get(one) + score);
                 
             } else {
-                kindMap.put(second, kindMap.get(second) + score);
+                kindMap.put(two, kindMap.get(two) + score);
             }
         }
         
