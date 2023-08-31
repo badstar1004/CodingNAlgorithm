@@ -13,6 +13,7 @@ class Solution {
             int period = 0;
             int j = i + 1;
             
+            // O(n^2)                               
             while(j < prices.length) {              // for(int j = i + 1; j < prices.length; j++) {
                 period++;                           //     answer[i]++;
                 if (prices[i] > prices[j]) {        //     if (prices[i] > prices[j]) {
