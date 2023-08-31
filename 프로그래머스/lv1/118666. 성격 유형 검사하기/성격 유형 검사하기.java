@@ -4,7 +4,12 @@ class Solution {
     public String solution(String[] survey, int[] choices) {
         String answer = "";
         
-        // 유형 별 점수
+        /*
+            1. 유형별 점수를 계산
+            2. for문, StringBuilder
+        */
+        
+        // 유형별 점수
         HashMap<Character, Integer> kindMap = new HashMap<>();
         kindMap.put('R', 0);
         kindMap.put('T', 0);
