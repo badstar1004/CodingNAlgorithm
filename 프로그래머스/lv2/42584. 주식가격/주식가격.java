@@ -9,12 +9,20 @@ class Solution {
         
         answer = new int[prices.length];
         for(int i = 0; i < prices.length; i++) {
-            for(int j = i + 1; j < prices.length; j++) {
-                answer[i]++;
-                if (prices[i] > prices[j]) {
-                    break;
-                }
+            // 기간
+            int period = 0;
+            int j = i + 1;
+            
+            while(j < prices.length) {              // for(int j = i + 1; j < prices.length; j++) {
+                period++;                           //     answer[i]++;
+                if (prices[i] > prices[j]) {        //     if (prices[i] > prices[j]) {
+                    break;                          //         break;
+                }                                   //     }
+                                                    // }
+                j++;
             }
+            
+            answer[i] = period;
         }
         
         return answer;
