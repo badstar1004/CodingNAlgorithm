@@ -74,7 +74,7 @@ class Solution {
         return Integer.parseInt(split[0]) * 60 + Integer.parseInt(split[1]);
     }
     
-    // 계산
+    // 요금 계산
     private int calFee(int totalTime, int[] fees) {
         if (totalTime <= fees[0]) {
             return fees[1];
