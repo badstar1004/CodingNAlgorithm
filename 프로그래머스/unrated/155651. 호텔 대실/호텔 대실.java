@@ -14,7 +14,7 @@ class Solution {
             int start = convertTime(time[0]);
             int end = convertTime(time[1]);
             
-            // 청소 후 객실 재사용
+            // 객실 재사용
             if(!endTimePq.isEmpty() && endTimePq.peek() <= start - 10) {
                 endTimePq.poll();
             }
