@@ -10,9 +10,12 @@ class Solution {
             hamburgerStack.push(order);
             
             if(hamburgerStack.size() >= 4) {
-                if(hamburgerStack.get(hamburgerStack.size() - 4) == 1 && hamburgerStack.get(hamburgerStack.size() - 3) == 2
-                    && hamburgerStack.get(hamburgerStack.size() - 2) == 3 && hamburgerStack.get(hamburgerStack.size() - 1) == 1) {
-                    
+                int fourth = hamburgerStack.get(hamburgerStack.size() - 4);     // 빵
+                int third = hamburgerStack.get(hamburgerStack.size() - 3);      // 야채
+                int seconds = hamburgerStack.get(hamburgerStack.size() - 2);    // 고기
+                int first = hamburgerStack.get(hamburgerStack.size() - 1);      // 빵
+                
+                if(fourth == 1 && third == 2 && seconds == 3 && first == 1) {
                     answer++;
                 
                     // Stack 빼기
