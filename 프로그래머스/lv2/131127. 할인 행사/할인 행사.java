@@ -5,8 +5,8 @@ class Solution {
         int answer = 0;
         
         /*
-            1. HashMap 사용
-            2. for문 사용
+            HashMap 사용
+            for문 사용
                 원하는 물품과 개수를 HashMap iWant 에 추가
                 할인행사하는 물품의 개수 HashMap discountProd 에 추가
                 iWant 와 discountProd value 값 비교
