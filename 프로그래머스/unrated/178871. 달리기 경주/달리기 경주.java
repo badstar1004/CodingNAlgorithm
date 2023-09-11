@@ -5,40 +5,30 @@ class Solution {
         String[] answer = {};
         
         // HashMap
-        HashMap<String, Integer> hashmap = new HashMap<>();
+        HashMap<String, Integer> rank = new HashMap<>();
         
-        // players 이름 인덱스 매핑
+        // player의 이름 인덱스
         for(int i = 0; i < players.length; i++) {
-            hashmap.put(players[i], i);
+            rank.put(players[i], i);
         }
         
-        // callings 로 순서 바꾸기
-        for(String callName : callings) {
-            // callName 의 인덱스 찾기
-            int idx = hashmap.get(callName);
+        // callings로 인한 순위 변경
+        for(String name : callings) {
+            // name 인덱스
+            int idx = rank.get(name);
+            
+            // 앞선수
             String tempName = players[idx - 1];
             
-            players[idx - 1] = players[idx];
+            // 순위 변경
+            players[idx - 1] = name;
             players[idx] = tempName;
             
-            // hashMap 수정
-            hashmap.put(players[idx - 1], idx - 1);
-            hashmap.put(players[idx], idx);
+            // hashMap 순위 변경
+            rank.put(players[idx - 1], idx - 1);
+            rank.put(players[idx], idx);
         }
         
-        
-        // 시간초과
-//         for(String callName : callings) {
-//             for(int i = 0; i < players.length; i++) {
-//                 if(callName.equals(players[i])) {
-//                     String tempName = players[i];
-//                     players[i] = players[i - 1];
-//                     players[i - 1] = tempName;
-                    
-//                     break;
-//                 }
-//             }
-//         }
         
         return players;
     }
