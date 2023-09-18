@@ -26,7 +26,7 @@ class Solution {
     }
     
     public int solution(int n, int k) {
-        int answer = -1;
+        int answer = 0;
         
         // 변환
         String convert = convertBinary(n, k);
@@ -43,6 +43,6 @@ class Solution {
             }
         }
         
-        return answer + 1;
+        return answer;
     }
 }
