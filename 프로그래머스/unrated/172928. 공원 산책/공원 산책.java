@@ -1,10 +1,10 @@
 class Solution {
     
     // 시작점 찾기
-    public int[] getStartPosition(String[] arr) {
-        for(int i = 0; i < arr.length; i++) {
-            for(int j = 0; j < arr[i].length(); j++) {
-                if(arr[i].charAt(j) == 'S') {
+    private static int[] getStart(String[] park) {
+        for(int i = 0; i < park.length; i++) {
+            for(int j = 0; j < park[i].length(); j++) {
+                if(park[i].charAt(j) == 'S') {
                     return new int[] {i, j};
                 }
             }
@@ -12,21 +12,24 @@ class Solution {
         return null;
     }
     
-    
     public int[] solution(String[] park, String[] routes) {
         int[] answer = {};
         
-        // 시작점
-        int[] startPosition = getStartPosition(park);
-        int dx[] = {-1, 1, 0, 0}; // N, S, W, E
-        int dy[] = {0, 0, -1, 1}; // N, S, W, E
+        // 시작점 찾기
+        int[] startPosition = getStart(park);
+        
+        // N, S, W, E
+        int dx[] = {-1, 1, 0, 0};
+        int dy[] = {0, 0, -1, 1};
         
         for(String route : routes) {
             // 진행 방향
             char direction = route.charAt(0);
+            
             // 거리
             int distance = Integer.parseInt(route.substring(2));
             
+            // 방향 인덱스
             int index = 0;
             if (direction == 'S') {
                 index = 1;
@@ -37,16 +40,19 @@ class Solution {
             }
             
             boolean valid = true;
-            for (int i = 1; i <= distance; i++) {
+            for(int i = 1; i <= distance; i++) {
+                // 방향 이동
                 int nx = startPosition[0] + dx[index] * i;
                 int ny = startPosition[1] + dy[index] * i;
-
-                if (nx < 0 || ny < 0 || nx >= park.length || ny >= park[0].length() || park[nx].charAt(ny) == 'X') {
+                
+                if(nx < 0 || ny < 0
+                    || nx >= park.length || ny >= park[0].length()
+                    || park[nx].charAt(ny) == 'X') {
                     valid = false;
                     break;
                 }
             }
-
+            
             if (valid) {
                 startPosition[0] += dx[index] * distance;
                 startPosition[1] += dy[index] * distance;
