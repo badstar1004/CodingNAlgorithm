@@ -21,6 +21,7 @@ class Solution{
         return maxLen;
     }
     
+    // 팰린드롬 확인
     private static int isPalindrome(String s, int left, int right) {
         int L = left, R = right;
         
