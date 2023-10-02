@@ -1,7 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
 class Solution {
     public int[] solution(String s) {
@@ -26,7 +23,7 @@ class Solution {
         List<Map.Entry<String, Integer>> list = new ArrayList<>(hashMap.entrySet());
 
         // 정렬 (값 기준 내림차순)
-        list.sort((o1, o2) -> o2.getValue() - o1.getValue());
+        list.sort((o1, o2) -> o2.getValue().compareTo(o1.getValue()));
 
         // answer 배열에 저장
         answer = new int[list.size()];
