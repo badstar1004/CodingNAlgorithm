@@ -30,7 +30,7 @@ class Solution {
         int n = maps.length;
         int m = maps[0].length();
         
-        // 시작점, 레버
+        // 시작점, 레버 찾기
         Position start = null, lever = null;
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < m; j++) {
@@ -59,7 +59,7 @@ class Solution {
     }
     
     // bfs (미로, 시작위치, 타겟 문자)
-    public static int bfs(String[] maps, Position start, char target) {
+    private static int bfs(String[] maps, Position start, char target) {
         int n = maps.length;
         int m = maps[0].length();
         boolean[][] visited = new boolean[n][m];
