@@ -12,14 +12,13 @@ class Truck {
 
 class Solution {
     public int solution(int bridge_length, int weight, int[] truck_weights) {
-        int answer = 0;
         
-         Queue<Truck> bridge = new LinkedList<>();
+        Queue<Truck> bridge = new LinkedList<>();
         int time = 0;
         int totalWeightOnBridge = 0;
         int index = 0;
 
-        while (index < truck_weights.length || !bridge.isEmpty()) {
+        while (!bridge.isEmpty() || index < truck_weights.length) {
             time++;
 
             // 다리 위의 트럭이 다리를 건너면 다리에서 제거
