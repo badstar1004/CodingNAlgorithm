@@ -1,12 +1,12 @@
 import java.util.*;
 
 class Truck {
-    int weight;
-    int distanceLeft;
+    int weight;     // 무게
+    int remainDistance;     // 남아있는 거리
 
-    public Truck(int weight, int distanceLeft) {
+    public Truck(int weight, int remainDistance) {
         this.weight = weight;
-        this.distanceLeft = distanceLeft;
+        this.remainDistance = remainDistance;
     }
 }
 
@@ -22,7 +22,7 @@ class Solution {
             time++;
 
             // 다리 위의 트럭이 다리를 건너면 다리에서 제거
-            if (!bridge.isEmpty() && bridge.peek().distanceLeft <= 0) {
+            if (!bridge.isEmpty() && bridge.peek().remainDistance <= 0) {
                 totalWeightOnBridge -= bridge.poll().weight;
             }
 
@@ -36,7 +36,7 @@ class Solution {
 
             // 다리 위의 모든 트럭의 남은 거리 업데이트
             for (Truck t : bridge) {
-                t.distanceLeft--;
+                t.remainDistance--;
             }
         }
 
