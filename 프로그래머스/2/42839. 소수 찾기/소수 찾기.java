@@ -4,6 +4,8 @@ class Solution {
     
     // 판별된 소수들
     private Set<Integer> primes = new HashSet<>();
+    // 방문 여부
+    private boolean[] visited;
     
     public int solution(String numbers) {
         int answer = 0;
@@ -11,11 +13,13 @@ class Solution {
         /*
             변수
                 HashSet
+                방문여부 배열
             매서드
                 재귀
                 소수판별
         */
         
+        visited = new boolean[numbers.length()];
         recursion("", numbers);
         return primes.size();
     }
@@ -30,7 +34,11 @@ class Solution {
         }
         
         for(int i = 0; i < numbers.length(); i++) {
-            recursion(prefix + numbers.charAt(i), numbers.substring(0, i) + numbers.substring(i + 1));
+            if(!visited[i]) {
+                visited[i] = true;
+                recursion(prefix + numbers.charAt(i), numbers);
+                visited[i] = false;
+            }
         }
     }
     
