@@ -20,13 +20,14 @@ class Solution {
         */
         
         visited = new boolean[numbers.length()];
-        recursion("", numbers);
+        recursion(new StringBuilder(), numbers);
         return primes.size();
     }
     
-    private void recursion(String prefix, String numbers) {
-        if(prefix != "") {
-            int num = Integer.parseInt(prefix);
+    // 재귀
+    private void recursion(StringBuilder prefix, String numbers) {
+        if(prefix.length() > 0) {      // 비어있는걸 확인하려면 isEmpty() 메서드가 더 명확하고 효율적
+            int num = Integer.parseInt(prefix.toString());
             
             if(isPrime(num)) {
                 primes.add(num);
@@ -36,7 +37,11 @@ class Solution {
         for(int i = 0; i < numbers.length(); i++) {
             if(!visited[i]) {
                 visited[i] = true;
-                recursion(prefix + numbers.charAt(i), numbers);
+                
+                prefix.append(numbers.charAt(i));
+                
+                recursion(prefix, numbers);
+                prefix.deleteCharAt(prefix.length() - 1); // 마지막 문자 제거
                 visited[i] = false;
             }
         }
