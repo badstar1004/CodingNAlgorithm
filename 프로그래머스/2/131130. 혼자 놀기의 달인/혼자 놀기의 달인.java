@@ -17,6 +17,7 @@ class Solution {
                 
                 while(!visited[curIdx]) {
                     visited[curIdx] = true;
+                    // -1 => 1부터 시작해서 인덱스 조절
                     curIdx = cards[curIdx] - 1;
                     count++;
                 }
