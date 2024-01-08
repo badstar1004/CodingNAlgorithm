@@ -17,10 +17,10 @@ public class Main {
 
             // 스티커 점수 입력
             for (int i = 0; i < 2; i++) {
-                StringTokenizer st = new StringTokenizer(br.readLine());
+                String[] tokens = br.readLine().split(" "); // 공백을 구분자로 사용하여 문자열을 분할
 
                 for (int j = 1; j <= N; j++) {
-                    sticker[i][j] = Integer.parseInt(st.nextToken());
+                    sticker[i][j] = Integer.parseInt(tokens[j - 1]); // 배열 인덱스 조정
                 }
             }
 
