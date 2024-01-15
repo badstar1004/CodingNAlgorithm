@@ -6,6 +6,8 @@ public class Main {
         int N = Integer.parseInt(br.readLine());
 
         int[] dp = new int[N + 1];
+        dp[0] = 0;
+        dp[1] = 0;
         for(int i = 2; i <= N; i++) {
             // 1 빼기
             dp[i] = dp[i - 1] + 1;
