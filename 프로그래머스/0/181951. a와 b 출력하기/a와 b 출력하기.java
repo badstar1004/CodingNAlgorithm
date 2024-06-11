@@ -6,7 +6,14 @@ public class Solution {
         int a = sc.nextInt();
         int b = sc.nextInt();
 
-        System.out.println("a = " + a);
-        System.out.println("b = " + b);
+        StringBuilder sb = new StringBuilder();
+        sb.append("a = ")
+            .append(a + "\n")
+            .append("b = ")
+            .append(b + "\n");
+        
+        System.out.println(sb.toString());
+        // System.out.println("a = " + a);
+        // System.out.println("b = " + b);
     }
 }
