@@ -15,6 +15,9 @@ class Solution {
             div = sum / 10;
             answer.append(sum % 10);
             
+            // System.out.println("div: " + div);
+            // System.out.println("answer: " + answer);
+            
             i--;
             j--;
         }
