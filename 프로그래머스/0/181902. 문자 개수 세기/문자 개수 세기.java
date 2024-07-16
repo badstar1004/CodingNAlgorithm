@@ -4,11 +4,12 @@ class Solution {
         
         for(char c : my_string.toCharArray()) {
             
-            // 대문자
             if(c >= 'A' && c <= 'Z') {
+                // 대문자
                 answer[c - 'A']++;
-                
+            
             } else if(c >= 'a' && c <= 'z') {
+                // 소문자
                 answer[c - 'a' + 26]++;
             }
         }
