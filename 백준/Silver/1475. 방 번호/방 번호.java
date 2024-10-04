@@ -21,7 +21,7 @@ public class Main {
         int sixNineCount = numberCount[6] + numberCount[9];
         numberCount[6] = numberCount[9] = (sixNineCount + 1) / 2;
         
-        // 가장 많이 필요한 숫자의 세트 수를 찾는다
+        // 가장 많이 필요한 숫자의 세트 수
         int maxSet = 0;
         for (int i = 0; i < 9; i++) {  // 0 ~ 8까지
             maxSet = Math.max(maxSet, numberCount[i]);
