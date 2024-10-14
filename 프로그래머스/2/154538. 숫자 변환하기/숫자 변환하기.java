@@ -26,7 +26,7 @@ class Solution {
             for(int nextValue : arrNextValue) {
                 if(nextValue <= y && !visited[nextValue]) {
                     visited[nextValue] = true;
-                queue.add(new int[] {nextValue, curStep + 1});
+                    queue.add(new int[] {nextValue, curStep + 1});
                 }
             }
         }
