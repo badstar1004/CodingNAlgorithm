@@ -19,7 +19,7 @@ public class Main {
             command(br.readLine().split(" "));
         }
 
-        System.out.print(sb); // 결과 한 번에 출력
+        System.out.print(sb);
 
     }
 
